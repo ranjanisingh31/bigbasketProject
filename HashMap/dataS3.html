@@ -6,7 +6,13 @@
 
   <body>
     <fieldset>
-      <input type="text" id="sb" onfocus="this.value=''" />
+      <input type="text" id="key" onfocus="this.value=''" placeholder="key" />
+      <input
+        type="text"
+        id="value"
+        onfocus="this.value=''"
+        placeholder="value"
+      />
       <button id="buttonAdd" onclick="addValue()">Add</button>
       <button id="buttonDelete" onclick="deleteValue()">Delete</button>
       <button id="buttonSearch" onclick="searchValue()">Search</button>
