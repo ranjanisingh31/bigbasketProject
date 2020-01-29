@@ -8,6 +8,13 @@ function addValue() {
   display();
 }
 
+//Deleting elements of array
+function deleteValue() {
+  arr.splice(arr.indexOf(key.value), 1);
+  alert("deleted element " + key.value);
+  display();
+}
+
 //Display function
 function display() {
   var e = "</hr>";
