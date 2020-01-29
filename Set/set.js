@@ -11,6 +11,16 @@ function addValue() {
   display();
 }
 
+//Delete element of set
+function deleteValue() {
+  if (s.delete(key.value)) {
+    alert("Element " + key.value + " deleted in Set");
+  } else {
+    alert("Element " + key.value + " not found in Set");
+  }
+  display();
+}
+
 //Display elements in set
 function display() {
   var e = "<h3>Elements in set:<br/>";
