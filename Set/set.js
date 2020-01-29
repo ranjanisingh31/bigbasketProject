@@ -21,6 +21,21 @@ function deleteValue() {
   display();
 }
 
+//search element of set
+function searchValue() {
+  if (s.has(key.value)) {
+    alert("Element " + key.value + " found");
+  } else {
+    alert("Element " + key.value + " not found in Set");
+  }
+}
+
+//clear set
+function clearValue() {
+  s.clear();
+  display();
+}
+
 //Display elements in set
 function display() {
   var e = "<h3>Elements in set:<br/>";
