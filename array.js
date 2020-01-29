@@ -15,6 +15,15 @@ function deleteValue() {
   display();
 }
 
+//Searching elements in array
+function searchValue() {
+  if (arr.indexOf(key.value) == -1) {
+    alert(key.value + " not found");
+  } else {
+    alert(key.value + " found at " + arr.indexOf(key.value) + " position");
+  }
+}
+
 //Display function
 function display() {
   var e = "</hr>";
