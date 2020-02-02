@@ -43,5 +43,5 @@ function display() {
   for (var i = 0; i < arr.length; i++) {
     e += arr[i] + "</h3></br>";
   }
-  document.getElementById("para").innerHTML = e;
+  document.getElementById("para1").innerHTML = e;
 }
