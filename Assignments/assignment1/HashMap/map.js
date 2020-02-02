@@ -41,7 +41,7 @@ function display() {
   for (var [key, value] of m.entries()) {
     e += key + "    " + value + "</br>";
   }
-  document.getElementById("para").innerHTML = e;
+  document.getElementById("para1").innerHTML = e;
 }
 
 //clear all
