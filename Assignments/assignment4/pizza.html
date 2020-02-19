@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pizza assignment</title>
+    <script>
+      function radioB() {
+        var x = document.getElementById("r1");
+        var y = document.getElementById("r2");
+        var z = document.getElementById("pizza");
+        var sel = document.getElementById("top");
+        var base = document.getElementById("base");
+        var size = document.getElementById("size");
+        sel.selectedIndex = 0;
+        base.selectedIndex = 0;
+        size.selectedIndex = 0;
+        for (var i = sel.length - 1; i >= 1; i--) {
+          sel.remove(i);
+        }
+        z.style.display = "block";
+        if (x.checked) {
+          var o1 = ["corn", "cheese", "mushroom", "mixVeg", "grilled veggie"];
+
+          for (var i = 1; i <= o1.length; i++) {
+            var opt = document.createElement("option");
+            opt.value = o1[i - 1];
+            opt.text = o1[i - 1];
+            sel.appendChild(opt, null);
+          }
+        } else {
+          var o1 = ["salami", "ham", "pepperoni", "bacon", "sausages"];
+          for (var i = 1; i <= o1.length; i++) {
+            var opt = document.createElement("option");
+            opt.value = o1[i - 1];
+            opt.text = o1[i - 1];
+            sel.appendChild(opt, null);
+          }
+        }
+      }
+
+      function calculate() {
+        var top = document.getElementById("top");
+        var size = document.getElementById("size");
+        var base = document.getElementById("base");
+        var q = document.getElementById("quan");
+        var x = document.getElementById("r1");
+        var y = document.getElementById("r2");
+        console.log(
+          top.options[top.selectedIndex].value,
+          size.options[size.selectedIndex].value,
+          base.options[base.selectedIndex].value,
+          q.value
+        );
+        if (x.checked) {
+          var a = new VegPizza(
+            top.options[top.selectedIndex].value,
+            size.options[size.selectedIndex].value,
+            base.options[base.selectedIndex].value,
+            q.value
+          );
+          alert("total price=" + a.priceCalc());
+        } else {
+          var b = new NonVegPizza(
+            top.options[top.selectedIndex].value,
+            size.options[size.selectedIndex].value,
+            base.options[base.selectedIndex].value,
+            q.value
+          );
+          alert("total price=" + b.priceCalc());
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Order Pizza</h1>
+    <div id="opt">
+      VegPizza:<input type="radio" id="r1" name="pizza" value="veg Pizza" />
+      NonVegPizza<input
+        type="radio"
+        id="r2"
+        name="pizza"
+        value="non veg Pizza"
+      />
+      <input type="button" value="submit" onclick="radioB()" />
+    </div>
+
+    <div id="pizza" style="display: none;">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              TOPPINGS:
+            </td>
+            <td>
+              <select id="top">
+                <option value="0">add toppings</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>SIZE:</td>
+            <td>
+              <select id="size">
+                <option value="select size">select size</option>
+                <option value="small">small</option>
+                <option value="medium">medium</option>
+                <option value="large">large</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>BASE:</td>
+            <td>
+              <select id="base">
+                <option value="select base">select base</option>
+                <option value="thin crust">thin crust</option>
+                <option value="thick crust">thick crust</option>
+                <option value="deep crust">deep crust</option>
+                <option value="cheese filled crust">cheese filled</option>
+                <option value="stuffed crust">stuffed crust</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>quantity:</td>
+            <td><input type="text" id="quan" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="button" value="done" onclick="calculate()" />
+    </div>
+
+    <script src="pizza.js"></script>
+  </body>
+</html>
