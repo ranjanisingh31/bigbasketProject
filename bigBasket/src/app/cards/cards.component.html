@@ -1,0 +1,24 @@
+<mat-grid-list cols="3">
+  <mat-grid-tile *ngFor="let item of items; index as i" [colspan]="1">
+    <div class="card-wrapper">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ item.name | uppercase }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><img src="{{ item.img }}" alt="img" mat-card-image /></p>
+          <div>
+            <span>Quantity={{ item.quant }}</span
+            >&nbsp;
+            <span>Price={{ item.price }}</span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button>
+            Add To Cart
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

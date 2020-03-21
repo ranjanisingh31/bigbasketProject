@@ -1,0 +1,35 @@
+* {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+mat-card {
+  background-color: khaki;
+  color: black;
+  border-style: groove;
+}
+
+mat-card-title {
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+mat-card-actions {
+  padding-bottom: 15px;
+  margin: 5px;
+}
+
+button {
+  background-color: khaki;
+  color: black;
+}
+
+img {
+  border-style: hidden;
+}
+.card-wrapper {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 250px;
+  height: 410px;
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "type": "fruits&Vegetable",
+    "name": "potato",
+    "quant": 1,
+    "price": 27,
+    "img": "/assets/img/potato.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "tomato",
+    "quant": 1,
+    "price": 30,
+    "img": "/assets/img/tomato.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "onion",
+    "quant": 1,
+    "price": 35,
+    "img": "/assets/img/onion.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "carrot",
+    "quant": 1,
+    "price": 36,
+    "img": "/assets/img/carrot.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "capsicum",
+    "quant": 1,
+    "price": 30,
+    "img": "/assets/img/capsicum.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "strawberry",
+    "quant": 1,
+    "price": 250,
+    "img": "/assets/img/strawberry.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "banana",
+    "quant": 1,
+    "price": 69,
+    "img": "/assets/img/banana.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "orange",
+    "quant": 1,
+    "price": 30,
+    "img": "/assets/img/orange.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "grapes",
+    "quant": 1,
+    "price": 110,
+    "img": "/assets/img/grapes.jpg"
+  },
+  {
+    "type": "fruits&Vegetable",
+    "name": "pomegranate",
+    "quant": 1,
+    "price": 149,
+    "img": "/assets/img/pomegranate.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "sugar",
+    "quant": 5,
+    "price": 210,
+    "img": "/assets/img/sugar.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "sunflower refined oil",
+    "quant": 1,
+    "price": 100,
+    "img": "/assets/img/sunflower-refined-oil.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "mustard oil",
+    "quant": 1,
+    "price": 134,
+    "img": "/assets/img/mustard-oil.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "wheat",
+    "quant": 5,
+    "price": 215,
+    "img": "/assets/img/wheat-atta.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "red masoor dal",
+    "quant": 1,
+    "price": 122,
+    "img": "/assets/img/masoor-dal.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "maida",
+    "quant": 1,
+    "price": 39,
+    "img": "/assets/img/maida.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "green-coriander",
+    "quant": 200,
+    "price": 56,
+    "img": "/assets/img/green-coriander.jpg"
+  },
+  {
+    "type": "foodgrainsOils&masala",
+    "name": "turmeric",
+    "quant": 200,
+    "price": 55,
+    "img": "/assets/img/turmeric.jpg"
+  }
+]

@@ -1,0 +1,19 @@
+mat-sidenav-container {
+  height: 100%;
+}
+mat-sidenav,
+mat-sidenav-content {
+  padding: 16px;
+  background-color: lightyellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+mat-sidenav {
+  width: 300px;
+  background-color: white !important;
+  color: Red;
+  font-weight: bold;
+  font-size: 20px;
+}
+mat-sidenav-content {
+  width: 100%;
+}

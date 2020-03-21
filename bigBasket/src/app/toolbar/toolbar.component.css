@@ -1,0 +1,16 @@
+.navbar {
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 10px;
+}
+form,
+span {
+  padding: 10px 20px;
+}
+.space {
+  flex: 1 1 auto;
+}
