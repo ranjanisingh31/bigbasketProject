@@ -10,7 +10,7 @@ import { IData } from "../items";
 export class CardsComponent implements OnInit {
   constructor(private _data: ComponentServiceService) {}
   public items = [];
-  @Input() public parentdata: string;
+  @Input() public parentdata: IData[];
 
   // addToCart(file) {
   //   console.log(file);
@@ -20,7 +20,7 @@ export class CardsComponent implements OnInit {
   //   );
   // }
   ngOnInit(): void {
-    this._data.getDetails().subscribe(data => {
+    this._data.getDetails(this.parentdata).subscribe(data => {
       this.items = data;
       console.log("items", this.items);
       console.log(this.parentdata);

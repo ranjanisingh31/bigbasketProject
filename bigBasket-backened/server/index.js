@@ -7,13 +7,11 @@ let item = new Item();
 app.use(cors());
 app.use(body.json());
 
-app.get("/getItems/:type", function(req, res) {
+app.get("/getItems", function(req, res) {
   console.log("handling API");
-  console.log("connecting to database");
-  let productType = req.params.type;
-  console.log("body", req.body);
-  item.getDetails(productType, results => {
-    res.status(200).send(results);
+  let type = req.body.type;
+  item.getDetails(type, results => {
+    res.status(200).json(results);
   });
 });
 app.get("/items/type", function(req, res) {
