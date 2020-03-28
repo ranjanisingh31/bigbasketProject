@@ -3,12 +3,14 @@ const ObjectId = require("mongoose").Types.ObjectId;
 const mongoUrl = "mongodb://127.0.0.1:27017/items";
 class Item {
   getDetails(productType, callback) {
+    console.log("in getDetails");
     mongoClient.connect(mongoUrl, (err, client) => {
       if (err) {
         console.log("error connecting to database");
         client.close();
         callback(null);
       }
+      console.log("connected");
       const db = client.db("items");
       const details = db.collection("details");
       details.find({ type: productType }).toArray((error, detail) => {
@@ -16,10 +18,11 @@ class Item {
           console.log("error finding the data");
           client.close();
           callback(null);
+        } else {
+          client.close();
+          console.log("details", detail);
+          callback(detail);
         }
-        console.log("details");
-        client.close();
-        callback(detail);
       });
     });
   }

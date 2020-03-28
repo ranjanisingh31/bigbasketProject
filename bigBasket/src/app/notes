@@ -1,0 +1,9 @@
+appComponent
+    ---toolbar
+    ---sidebar
+    ---footer
+    ---homepage
+         ---tabs
+         ---cards
+    ---cart
+    ---checkout

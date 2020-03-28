@@ -7,9 +7,10 @@ let item = new Item();
 app.use(cors());
 app.use(body.json());
 
-app.get("/getItems", function(req, res) {
-  console.log("handling API");
-  let type = req.body.type;
+app.get("/getItems/:type", function(req, res) {
+  //let type = req.body.type;
+  let type = req.params.type;
+  console.log("handling API", type, req.params.type);
   item.getDetails(type, results => {
     res.status(200).json(results);
   });

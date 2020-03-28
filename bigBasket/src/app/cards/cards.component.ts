@@ -8,22 +8,29 @@ import { IData } from "../items";
   styleUrls: ["./cards.component.css"]
 })
 export class CardsComponent implements OnInit {
-  constructor(private _data: ComponentServiceService) {}
-  public items = [];
-  @Input() public parentdata: IData[];
+  public badge: number;
+  public cartData = {};
+  constructor(private _data: ComponentServiceService) {
+    this._data.badge.subscribe(data => (this.badge = data));
+  }
 
-  // addToCart(file) {
-  //   console.log(file);
-  //   this._data.addToCart(file).subscribe(
-  //     data => console.log("added to cart successfully"),
-  //     error => console.log("error in adding to cart")
-  //   );
-  // }
+  public items;
+
+  @Input() public parentdata: IData;
+
+  addToCartFun(item) {
+    this._data.addToCart(item);
+    this._data.badge.next(this.badge + 1);
+  }
+  removeFromCartFun(item) {
+    this._data.removeFromCart(item);
+    this._data.badge.next(this.badge - 1);
+  }
+
   ngOnInit(): void {
     this._data.getDetails(this.parentdata).subscribe(data => {
       this.items = data;
-      console.log("items", this.items);
-      console.log(this.parentdata);
     });
+    this.cartData = this._data.getCartData();
   }
 }

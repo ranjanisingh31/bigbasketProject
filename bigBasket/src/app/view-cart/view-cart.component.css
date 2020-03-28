@@ -1,0 +1,52 @@
+* {
+  font-size: 30px;
+  font-family: "serif";
+  text-align: center;
+}
+.wrapper {
+  background: linear-gradient(black, rgb(255, 230, 0), lightyellow);
+  margin: 20px;
+  padding: 10px;
+}
+.mat-display-3 {
+  color: black;
+  text-align: center;
+  -webkit-text-stroke: 0.5px white;
+  text-shadow: 0px 3px 3px rgb(255, 230, 0);
+}
+.mat-card {
+  background-color: white;
+  color: black;
+  height: 400px;
+  width: 1200px;
+  margin-left: 45px;
+  margin-top: 20px;
+}
+.mat-card-image {
+  width: 250px;
+  height: 270px;
+  border-style: ridge;
+}
+mat-label {
+  color: black;
+}
+.total {
+  color: chocolate;
+}
+
+#name {
+  padding: 10px;
+  margin: 5px;
+  color: black;
+  line-height: normal;
+  width: 100%;
+  -webkit-text-stroke: 0.5px black;
+  text-shadow: 0px 3px 3px rgb(134, 132, 106);
+}
+a {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(255, 230, 0);
+  color: black;
+  text-decoration: none;
+}

@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ name }}`s Order</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngFor="let order of orderedData">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              {{ order.name }}
+            </td>
+            <td>
+              <img src="{{ order.img }}" alt="img" />
+            </td>
+            <td>
+              price:{{ order.price }}
+              <small class="text-danger">Cash On Delivery</small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

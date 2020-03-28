@@ -1,0 +1,127 @@
+<div class="wrapper">
+  <div class="backG">
+    <div id="title" class="mat-display-3">SHIPPING FORM</div>
+    <form [formGroup]="shippingForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          [class.is-invalid]="name.invalid && name.touched"
+        />
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched"
+          >Name is required</small
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          class="form-control"
+          [class.is-invalid]="email.invalid && email.touched"
+        />
+        <div *ngIf="email.invalid && email.touched">
+          <small class="text-danger" *ngIf="email.errors?.required"
+            >Email field is required</small
+          >
+          <small class="text-danger" *ngIf="email.errors?.email"
+            >Enter a valid email</small
+          >
+        </div>
+      </div>
+      <div formGroupName="address">
+        <div class="form-group">
+          <label>Address</label>
+          <input
+            type="text"
+            formControlName="street1"
+            placeholder="street1"
+            class="form-control"
+            [class.is-invalid]="street1.invalid && street1.touched"
+          />
+          <small
+            [class.d-none]="street1.valid || street1.untouched"
+            class="text-danger"
+            >Street1 field is required</small
+          >
+          <input
+            type="text"
+            formControlName="street2"
+            placeholder="street2 (optional)"
+            class="form-control"
+          />
+          <input
+            type="text"
+            formControlName="city"
+            placeholder="city"
+            class="form-control"
+            [class.is-invalid]="city.invalid && city.touched"
+          />
+          <small
+            [class.d-none]="city.valid || city.untouched"
+            class="text-danger"
+            >City field is required</small
+          >
+          <input
+            type="text"
+            formControlName="state"
+            placeholder="state"
+            class="form-control"
+            [class.is-invalid]="state.invalid && state.touched"
+          />
+          <small
+            [class.d-none]="state.valid || state.untouched"
+            class="text-danger"
+            >State field is required</small
+          >
+          <input
+            type="text"
+            formControlName="postalCode"
+            placeholder="postal code"
+            class="form-control"
+            [class.is-invalid]="postalCode.invalid && postalCode.touched"
+          />
+          <div *ngIf="postalCode.invalid && postalCode.touched">
+            <small class="text-danger" *ngIf="postalCode.errors?.required"
+              >Postal code field is required</small
+            >
+            <small class="text-danger" *ngIf="postalCode.errors?.minlength"
+              >Enter a valid postal Code</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number</label>
+        <input
+          type="text"
+          formControlName="mob"
+          class="form-control"
+          [class.is-invalid]="mob.invalid && mob.touched"
+        />
+      </div>
+      <div *ngIf="mob.invalid && mob.touched">
+        <small class="text-danger" *ngIf="mob.errors.required"
+          >Mobile number is required</small
+        >
+        <small class="text-danger" *ngIf="mob.errors.minlength"
+          >Enter a valid mobile number</small
+        >
+      </div>
+      <div class="btn">
+        <button
+          id="btn"
+          type="submit"
+          mat-stroked-button
+          routerLink="/orderlist"
+          [disabled]="!shippingForm.valid"
+        >
+          Place Order
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

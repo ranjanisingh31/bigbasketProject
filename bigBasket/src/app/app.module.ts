@@ -11,20 +11,30 @@ import { ComponentServiceService } from "./component-service.service";
 import { TabsComponent } from "./tabs/tabs.component";
 import { HttpClientModule } from "@angular/common/http";
 import { CardsComponent } from "./cards/cards.component";
+import { CheckoutPageComponent } from "./checkout-page/checkout-page.component";
+import { ViewCartComponent } from "./view-cart/view-cart.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { OrderListComponent } from './order-list/order-list.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     SidenavComponent,
     TabsComponent,
-    CardsComponent
+    CardsComponent,
+    CheckoutPageComponent,
+    ViewCartComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ComponentServiceService],
   bootstrap: [AppComponent]

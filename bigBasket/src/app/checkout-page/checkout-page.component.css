@@ -1,0 +1,40 @@
+* {
+  font-family: serif;
+  font-size: 25px;
+}
+label {
+  color: black;
+  text-transform: uppercase;
+}
+.wrapper {
+  padding: 20px;
+  background: linear-gradient(black, rgb(255, 230, 0), lightyellow);
+}
+input {
+  margin: 10px;
+}
+#title {
+  font-size: 40px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  color: black;
+  -webkit-text-stroke: 0.5px white;
+  text-shadow: 0px 3px 3px black;
+}
+#btn {
+  background-color: darkorange;
+  color: black;
+}
+.btn {
+  margin-left: 520px;
+}
+.backG {
+  margin: 20px;
+  background: linear-gradient(lightyellow, rgb(255, 230, 0), lightyellow);
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-style: ridge;
+}

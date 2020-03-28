@@ -7,8 +7,7 @@ import { ComponentServiceService } from "../component-service.service";
   styleUrls: ["./tabs.component.css"]
 })
 export class TabsComponent implements OnInit {
-  public tabs;
-
+  public tabs = [];
   constructor(private _data: ComponentServiceService) {}
 
   ngOnInit(): void {
