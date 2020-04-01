@@ -13,7 +13,7 @@ export class CardsComponent implements OnInit {
   constructor(private _data: ComponentServiceService) {
     this._data.badge.subscribe(data => (this.badge = data));
   }
-
+  showspinner = true;
   public items;
 
   @Input() public parentdata: IData;
@@ -29,6 +29,7 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
     this._data.getDetails(this.parentdata).subscribe(data => {
+      this.showspinner = false;
       this.items = data;
     });
     this.cartData = this._data.getCartData();

@@ -114,12 +114,13 @@
       <div class="btn">
         <button
           id="btn"
-          type="submit"
+          type="button"
           mat-stroked-button
-          routerLink="/orderlist"
+          routerLink="/thankyoupage"
           [disabled]="!shippingForm.valid"
+          (click)="onSubmit()"
         >
-          Place Order
+          Proceed
         </button>
       </div>
     </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { ComponentServiceService } from "../component-service.service";
 
 @Component({
   selector: "app-checkout-page",
@@ -7,7 +8,10 @@ import { FormBuilder, Validators } from "@angular/forms";
   styleUrls: ["./checkout-page.component.css"]
 })
 export class CheckoutPageComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private _data: ComponentServiceService
+  ) {}
   public shippingForm;
 
   get name() {
@@ -33,7 +37,15 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   onSubmit() {
-    alert("submitted");
+    console.log(this.shippingForm.value);
+    this._data.setShippingDetail(this.shippingForm.value).subscribe(
+      response => console.log("submitted successfully.", response),
+      error =>
+        console.log(
+          "error in submitting the Form. Please refresh to continue shopping again",
+          error
+        )
+    );
   }
   ngOnInit(): void {
     this.shippingForm = this.fb.group({

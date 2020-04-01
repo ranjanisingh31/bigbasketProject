@@ -14,7 +14,7 @@ import { CardsComponent } from "./cards/cards.component";
 import { CheckoutPageComponent } from "./checkout-page/checkout-page.component";
 import { ViewCartComponent } from "./view-cart/view-cart.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { OrderListComponent } from './order-list/order-list.component';
+import { ThankYouPageComponent } from "./thank-you-page/thank-you-page.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { OrderListComponent } from './order-list/order-list.component';
     CardsComponent,
     CheckoutPageComponent,
     ViewCartComponent,
-    OrderListComponent
+    ThankYouPageComponent
   ],
   imports: [
     BrowserModule,

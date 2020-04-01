@@ -3,7 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { ViewCartComponent } from "./view-cart/view-cart.component";
 import { TabsComponent } from "./tabs/tabs.component";
 import { CheckoutPageComponent } from "./checkout-page/checkout-page.component";
-import { OrderListComponent } from "./order-list/order-list.component";
+import { ThankYouPageComponent } from "./thank-you-page/thank-you-page.component";
 
 const routes: Routes = [
   { path: "", component: TabsComponent },
@@ -16,8 +16,8 @@ const routes: Routes = [
     component: CheckoutPageComponent
   },
   {
-    path: "orderlist",
-    component: OrderListComponent
+    path: "thankyoupage",
+    component: ThankYouPageComponent
   }
 ];
 //export const routingComponent = [ViewCartComponent];

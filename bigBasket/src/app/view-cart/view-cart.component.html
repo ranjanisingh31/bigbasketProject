@@ -8,8 +8,20 @@
             <img src="{{ item.img }}" alt="img" mat-card-image id="img" />
           </mat-grid-tile>
           <mat-grid-tile>
-            <div id="name">{{ item.name | uppercase }}</div>
+            <table>
+              <tr>
+                <td>
+                  <div id="name">{{ item.name | uppercase }}</div>
+                </td>
+              </tr>
+              <tr>
+                <td style="color:gray">
+                  ({{ item.price }} x {{ item.count }} )
+                </td>
+              </tr>
+            </table>
           </mat-grid-tile>
+
           <mat-grid-tile colspan="2">
             <form>
               <table>
@@ -45,22 +57,11 @@
                   <tr>
                     <td><label class="total">TOTAL:</label></td>
                     <td>
-                      <div
-                        *ngIf="
-                          cartData[item.name];
-                          then thenBlock;
-                          else elseBlock
-                        "
-                      ></div>
-                      <ng-template #thenBlock>
-                        <input
-                          class="total"
-                          value="{{ cartData[item.name] }}"
-                          readonly
-                      /></ng-template>
-                      <ng-template #elseBlock>
-                        <input class="total" value="{{ item.price }}" readonly
-                      /></ng-template>
+                      <input
+                        class="total"
+                        value="{{ item.totalPrice }}"
+                        readonly
+                      />
                     </td>
                   </tr>
                 </tbody>
@@ -81,6 +82,9 @@
     </div>
   </ng-template>
   <ng-template #thenBlock>
+    <mat-card style="height:50px;">
+      <mat-card-content>Total amount to be paid: {{ total }}</mat-card-content>
+    </mat-card>
     <a routerLink="/checkout" mat-stroked-button>Place Order</a>
   </ng-template>
 </div>

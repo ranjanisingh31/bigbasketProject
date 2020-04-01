@@ -9,6 +9,7 @@ label {
 .wrapper {
   padding: 20px;
   background: linear-gradient(black, rgb(255, 230, 0), lightyellow);
+  margin-top: 80px;
 }
 input {
   margin: 10px;

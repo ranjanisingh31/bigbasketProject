@@ -45,6 +45,28 @@ class Item {
       });
     });
   }
+
+  setShippingDetails(data, callback) {
+    mongoClient.connect(mongoUrl, (err, client) => {
+      if (err) {
+        console.log("error in posting data to database");
+        client.close();
+        callback(null);
+      }
+      const db = client.db("items");
+      var shippingDetails = db.collection("shippingDetails");
+      shippingDetails.insertOne(data, error => {
+        if (error) {
+          console.log("error in inserting formValues");
+          client.close();
+          callback(null);
+        }
+        console.log("submitted");
+        client.close();
+        callback("completed12345");
+      });
+    });
+  }
 }
 
 module.exports = Item;
