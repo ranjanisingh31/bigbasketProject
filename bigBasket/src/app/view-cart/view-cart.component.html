@@ -1,90 +1,104 @@
-<div class="wrapper">
-  <span class="mat-display-3">CART</span>
-  <div *ngFor="let item of items">
-    <mat-card>
-      <mat-card-content>
-        <mat-grid-list cols="4" rowHeight="400px">
-          <mat-grid-tile>
-            <img src="{{ item.img }}" alt="img" mat-card-image id="img" />
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <table>
-              <tr>
-                <td>
-                  <div id="name">{{ item.name | uppercase }}</div>
-                </td>
-              </tr>
-              <tr>
-                <td style="color:gray">
-                  ({{ item.price }} x {{ item.count }} )
-                </td>
-              </tr>
-            </table>
-          </mat-grid-tile>
+<mat-sidenav-container>
+  <mat-sidenav mode="push" opened="{{ sidenav }}">
+    <app-checkout-page></app-checkout-page>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="wrapper">
+      <span class="mat-display-3">CART</span>
+      <div *ngFor="let item of items">
+        <mat-card>
+          <mat-card-content>
+            <mat-grid-list cols="4" rowHeight="400px">
+              <mat-grid-tile>
+                <img src="{{ item.img }}" alt="img" mat-card-image id="img" />
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <table>
+                  <tr>
+                    <td>
+                      <div id="name">{{ item.name | uppercase }}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="color: gray;">
+                      ({{ item.price }} x {{ item.count }} )
+                    </td>
+                  </tr>
+                </table>
+              </mat-grid-tile>
 
-          <mat-grid-tile colspan="2">
-            <form>
-              <table>
-                <tbody>
-                  <tr>
-                    <td><label>Quantity:</label></td>
-                    <td>
-                      <input type="text" value="{{ item.quant }}kg" readonly />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>Price:</label>
-                    </td>
-                    <td>
-                      <input type="text" value="{{ item.price }}" readonly />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Add On:</label></td>
+              <mat-grid-tile colspan="2">
+                <form>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td><label>Quantity:</label></td>
+                        <td>
+                          <input
+                            type="text"
+                            value="{{ item.quant }}kg"
+                            readonly
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label>Price:</label>
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            value="{{ item.price }}"
+                            readonly
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label>Add On:</label></td>
 
-                    <td>
-                      <input
-                        id="add"
-                        #count
-                        type="number"
-                        min="1"
-                        value="1"
-                        (change)="updateCart(item, count)"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label class="total">TOTAL:</label></td>
-                    <td>
-                      <input
-                        class="total"
-                        value="{{ item.totalPrice }}"
-                        readonly
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </form>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div *ngIf="items.length > 0; then thenBlock; else elseBlock"></div>
-  <ng-template #elseBlock>
-    <div
-      style="margin:30px;
-    color:black;"
-    >
-      Nothing Added To Cart
+                        <td>
+                          <input
+                            id="add"
+                            #count
+                            type="number"
+                            min="1"
+                            value="1"
+                            (change)="updateCart(item, count)"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="total">TOTAL:</label></td>
+                        <td>
+                          <input
+                            class="total"
+                            value="{{ item.totalPrice }}"
+                            readonly
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="items.length > 0; then thenBlock; else elseBlock"></div>
+      <ng-template #elseBlock>
+        <div style="margin: 30px; color: black;">
+          Nothing Added To Cart
+        </div>
+      </ng-template>
+      <ng-template #thenBlock>
+        <mat-card style="height: 50px;">
+          <mat-card-content
+            >Total amount to be paid: {{ total }}</mat-card-content
+          >
+        </mat-card>
+        <a mat-stroked-button (click)="toggle()">Place Order</a>
+      </ng-template>
     </div>
-  </ng-template>
-  <ng-template #thenBlock>
-    <mat-card style="height:50px;">
-      <mat-card-content>Total amount to be paid: {{ total }}</mat-card-content>
-    </mat-card>
-    <a routerLink="/checkout" mat-stroked-button>Place Order</a>
-  </ng-template>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

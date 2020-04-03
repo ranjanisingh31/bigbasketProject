@@ -26,17 +26,17 @@ app.post("/shippingDetail", function(req, res) {
     name: req.body.name,
     email: req.body.email,
     address: {
-      street1: req.body.street1,
-      street2: req.body.street2,
-      city: req.body.city,
-      state: req.body.state,
-      postalCode: req.body.postalCode
+      street1: req.body.address.street1,
+      street2: req.body.address.street2,
+      city: req.body.address.city,
+      state: req.body.address.state,
+      postalCode: req.body.address.postalCode
     },
     mob: req.body.mob
   };
   item.setShippingDetails(data, result => {
-    console.log("saved formData");
-    res.status(200).send(result);
+    console.log("saved formData", result);
+    res.status(200).json({});
   });
 });
 // app.put("/addToCart", function(req, res) {

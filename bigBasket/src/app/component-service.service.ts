@@ -25,6 +25,7 @@ export class ComponentServiceService {
   }
 
   setShippingDetail(userData) {
+    console.log(userData);
     return this.http.post(this._url2, userData);
   }
   //addToCart

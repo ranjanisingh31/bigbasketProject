@@ -37,7 +37,6 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.shippingForm.value);
     this._data.setShippingDetail(this.shippingForm.value).subscribe(
       response => console.log("submitted successfully.", response),
       error =>

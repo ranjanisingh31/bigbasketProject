@@ -1,23 +1,23 @@
 * {
   font-family: serif;
-  font-size: 25px;
+  font-size: 18px;
 }
 label {
   color: black;
   text-transform: uppercase;
 }
 .wrapper {
-  padding: 20px;
+  padding: 10px;
   background: linear-gradient(black, rgb(255, 230, 0), lightyellow);
-  margin-top: 80px;
+  margin-top: 10px;
 }
 input {
-  margin: 10px;
+  margin-bottom: 5px;
 }
 #title {
-  font-size: 40px;
-  padding: 10px;
-  margin: 10px;
+  font-size: 30px;
+  padding: 5px;
+  margin: 5px;
   text-align: center;
   color: black;
   -webkit-text-stroke: 0.5px white;
@@ -31,7 +31,7 @@ input {
   margin-left: 520px;
 }
 .backG {
-  margin: 20px;
+  margin: 100px;
   background: linear-gradient(lightyellow, rgb(255, 230, 0), lightyellow);
   padding-left: 20px;
   padding-right: 40px;

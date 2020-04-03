@@ -1,41 +1,45 @@
-<mat-grid-list cols="3">
-  <mat-grid-tile *ngFor="let item of items; index as i" colspan="1">
-    <div class="card-wrapper">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{ item.name | uppercase }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p><img src="{{ item.img }}" alt="img" mat-card-image id="img" /></p>
-          <div>
-            <span>Quantity={{ item.quant }}kg</span>&nbsp;
-            <span>Price={{ item.price }}</span>
-          </div>
-        </mat-card-content>
-        <mat-card-actions align="center">
-          <div
-            *ngIf="!cartData[item.name]; then thenBlock; else elseBlock"
-          ></div>
-          <ng-template #thenBlock>
-            <button
-              style="background-color: rgb(255, 230, 0);color:black"
-              mat-raised-button
-              (click)="addToCartFun(item)"
+<div class="wrapper">
+  <mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let item of items; index as i" colspan="1">
+      <div class="card-wrapper">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ item.name | uppercase }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              <img src="{{ item.img }}" alt="img" mat-card-image id="img" />
+            </p>
+            <div>
+              <span>Quantity={{ item.quant }}kg</span>&nbsp;
+              <span>Price={{ item.price }}</span>
+            </div>
+          </mat-card-content>
+          <mat-card-actions align="center">
+            <div
+              *ngIf="!cartData[item.name]; then thenBlock; else elseBlock"
+            ></div>
+            <ng-template #thenBlock>
+              <button
+                style="background-color: rgb(255, 230, 0); color: black;"
+                mat-raised-button
+                (click)="addToCartFun(item)"
+              >
+                Add To Cart
+              </button></ng-template
             >
-              Add To Cart
-            </button></ng-template
-          >
-          <ng-template #elseBlock>
-            <button
-              style="background-color: rgb(248, 74, 6); color:white"
-              mat-raised-button
-              (click)="removeFromCartFun(item)"
+            <ng-template #elseBlock>
+              <button
+                style="background-color: rgb(248, 74, 6); color: white;"
+                mat-raised-button
+                (click)="removeFromCartFun(item)"
+              >
+                Remove From Cart
+              </button></ng-template
             >
-              Remove From Cart
-            </button></ng-template
-          >
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
