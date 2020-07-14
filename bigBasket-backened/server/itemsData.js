@@ -1,6 +1,9 @@
 const mongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongoose").Types.ObjectId;
-const mongoUrl = "mongodb://127.0.0.1:27017/items";
+
+const mongoUrl =
+  "mongodb+srv://ranjaniSingh_31:1331@cluster0-6phr2.mongodb.net/test?retryWrites=true&w=majority";
+
 class Item {
   getDetails(productType, callback) {
     console.log("in getDetails");
@@ -15,7 +18,7 @@ class Item {
       const details = db.collection("details");
       details.find({ type: productType }).toArray((error, detail) => {
         if (error) {
-          console.log("error finding the data");
+          console.log("error finding the data", error);
           client.close();
           callback(null);
         } else {
@@ -55,7 +58,7 @@ class Item {
       }
       const db = client.db("items");
       var shippingDetails = db.collection("shippingDetails");
-      shippingDetails.insertOne(data, error => {
+      shippingDetails.insertOne(data, (error) => {
         if (error) {
           console.log("error in inserting formValues");
           client.close();

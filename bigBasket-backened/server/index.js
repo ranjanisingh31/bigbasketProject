@@ -21,6 +21,7 @@ app.get("/items/type", function(req, res) {
   });
 });
 
+
 app.post("/shippingDetail", function(req, res) {
   let data = {
     name: req.body.name,
@@ -44,4 +45,5 @@ app.post("/shippingDetail", function(req, res) {
 //   console.log(req.body);
 //   res.json({});
 // });
+
 app.listen(3001);
